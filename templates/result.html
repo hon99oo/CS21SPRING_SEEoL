@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SEJONG UNIV's evaluation of lecture</title>
+    {% load static %}
+    <link href="{% static "/css/result.css" %}" rel="stylesheet" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Keyword', ' ', {role:'style'}],
+        ['Professor', {{professor_score}},'rgb(156,188,97)'],
+        ['Class', {{class_score}}, 'rgb(234,107,130)'],
+        ['Homework', {{homework_score}},'rgb(156,188,97)'],
+        ['Exam', {{exam_score}},'rgb(245,184,97)'],
+        ['Grade', {{grade_score}},'blueviolet']
+      ]);
+
+      var options = {
+          fontSize : 25,
+        title: '영역별 점수',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'Score',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'Keyword'
+        }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+    </script>
+    <script>
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="box1">
+        <div class="logo"><a href="/main/" onfocus="blur()"><h1>SEEoL</h1></a></div>
+        <div class="search">
+            <div class="search_box">
+                <form action="/result/">
+                    <input type="text" placeholder="Search your lecture" name="search">
+                    <button type="submit">SEARCH</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="box2">
+        <div>
+            <h1>&nbsp {{ lecture_name }} - {{ professor_name }}</h1>
+        </div>
+    </div>
+    <div class="box3">
+        <div class="content1" id="lecture_info">
+            <div class="info1">
+                <img class="professor_img" src="../static/img/professor.png" alt="">
+            </div>
+            <div class="info2">
+                <div></div>
+                <div><span class="professor_name"><strong><br>Professor<br><br></strong></span><span class="score">score : {{ professor_score }} / 10</span></div>
+            </div>
+        </div>
+        <div class="content2" id="lecture_info">
+            <div class="info1">
+                <img class="class_img" src="../static/img/class.png" alt="">
+            </div>
+            <div class="info2">
+                <div></div>
+                <div><span class="class_name"><strong><br>Class<br><br></strong></span><span class="score">score : {{ class_score }} / 10</span></div>
+            </div>
+        </div>
+        <div class="content3" id="lecture_info">
+            <div class="info1">
+                <img class="homework_img" src="../static/img/exam.png" alt="">
+            </div>
+            <div class="info2">
+                <div></div>
+                <div><span class="homework_name"><strong><br>Homework<br><br></strong></span><span class="score">score : {{ homework_score }} / 10</span></div>
+            </div>
+        </div>
+        <div class="content4" id="lecture_info">
+            <div class="info1">
+                <img class="exam_img" src="../static/img/homework.png" alt="">
+            </div>
+            <div class="info2">
+                <div></div>
+                <div><span class="exam_name"><strong><br>Exam<br><br></strong></span><span class="score">score : {{ exam_score }} / 10</span></div>
+            </div>
+        </div>
+        <div class="content5" id="lecture_info">
+            <div class="info1">
+                <img class="grade_img" src="../static/img/grade.png" alt="">
+            </div>
+            <div class="info2">
+                <div></div>
+                <div><span class="grade_name"><strong><br>Grade<br><br></strong></span><span class="score">score : {{ grade_score }} / 10</span></div>
+            </div>
+        </div>
+        <div class="content6">
+            <div class="part1">
+                  <div id="chart_div" style="width:100%; height:80%;"></div>
+            </div>
+            <div class="part2">
+                <img class="wordcloudImage" src="../static/wordcloud/test.png" alt="">
+            </div>
+            <div class="part3">
+                <h1 style="text-align:center;">강의 요약</h1>
+                <div id="summary_box">
+                    <p id="summary_t">{{ summary|safe }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="content7" >
+            <div class="section1">
+                <div class="simtitle"><h1 style="text-align:center;">유사 강의 추천</h1></div>
+                <div class="simpart1"><h3>Lecture</h3>{{ sim_lec|safe }}</div>
+                <div class="simpart2"><h3>Score</h3>{{ sim_score|safe }}</div>
+            </div>
+            <div class="section2" >
+                <h1 style="text-align:center;">실제 강의 평가</h1>
+                <div style="overflow:scroll; width:100%; height:90%;">
+                    {{ review|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

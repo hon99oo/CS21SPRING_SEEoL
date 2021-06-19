@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<script>
+    var num = prompt("시간을 입력하세요[초]","3");
+    if (num == null)
+        document.write("입력을 취소했습니다.");
+    var str = prompt("문자열을 입력하세요.","외출할 시간입니다");
+    function say(){
+        alert(str);
+    }
+    setTimeout(say,num*1000);
+</script>
+</head>
+<body>
+
+</body>
+</html>

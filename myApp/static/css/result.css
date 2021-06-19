@@ -1,0 +1,308 @@
+/*전체 그리드*/
+.wrapper {
+    display: grid;
+    grid-template-rows: 120px 100px 1000px 200px;
+    padding-left:10%;
+    padding-right:10%;
+}
+.box1 {
+    border-bottom : 2px solid grey;
+    grid-template-columns: 1fr 1fr;
+    display : grid;
+}
+.box2{
+    margin-top:auto;
+    background-color: rgb(246,247,251);
+}
+.box3 {
+    display:grid;
+    font-size : 14px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
+    background-color: rgb(246,247,251);
+}
+a{text-decoration : none; outline:none;}
+a:active{color:black; text-decoration : none;}
+a:visited{color:black; text-decoration:none;}
+a:link{color:black; text-decoration:none;}
+/*전체 그리드*/
+
+/*box1*/
+.logo{
+    margin-bottom:auto;
+    margin-top:auto;
+    text-align: left;
+    color:#1b5ac2;
+}
+.search{
+    text-align:center;
+    display: grid;
+
+}
+.search_box{
+    margin-left:auto;
+    margin-top:auto;
+    margin-bottom:auto;
+    text-align:right;
+    height:40px;
+    width:600px;
+    border : 2px solid #1b5ac2;
+    border-radius:5px;
+    background-color: white;
+}
+.search_box input{
+    font-size: 16px;
+    width: 500px;
+    padding: 10px;
+    border: 0px;
+    border-radius:5px;
+    outline: none;
+    float: left;
+}
+.search_box button{
+    width:80px;
+    height:40px;
+    border: 0px;
+    background: #1b5ac2;
+    outline:none;
+    float:right;
+    color:#ffffff;
+}
+/*box1*/
+
+/*box2*/
+.box2 h1{
+    color:#2c3034;
+    margin-left:10px;
+    margin-top:30px;
+    border-left:5px solid #2c3034;
+}
+/*box2*/
+
+/*box3*/
+.content1{
+    grid-column:1/2;
+    background-color: white;
+    padding:5px;
+    margin:8px;
+    margin-top:40px;
+    margin-bottom:40px;
+    border-radius : 10px;
+    border-top:1px solid lightgrey;
+    border-left:1px solid lightgrey;
+    border-bottom:4px solid lightgrey;
+    border-right:4px solid lightgrey;
+}
+.content2{
+    grid-column:2/3;
+    background-color: white;
+    padding:5px;
+    margin:8px;
+    margin-top:40px;
+    margin-bottom:40px;
+    border-radius : 10px;
+    border-top:1px solid lightgrey;
+    border-left:1px solid lightgrey;
+    border-bottom:4px solid lightgrey;
+    border-right:4px solid lightgrey;
+}
+.content3{
+    grid-column:3/4;
+    background-color: white;
+    padding:5px;
+    margin:8px;
+    margin-top:40px;
+    margin-bottom:40px;
+    border-radius : 10px;
+    border-top:1px solid lightgrey;
+    border-left:1px solid lightgrey;
+    border-bottom:4px solid lightgrey;
+    border-right:4px solid lightgrey;
+}
+.content4{
+    grid-column:4/5;
+    background-color: white;
+    padding:5px;
+    margin:8px;
+    margin-top:40px;
+    margin-bottom:40px;
+    border-radius : 10px;
+    border-top:1px solid lightgrey;
+    border-left:1px solid lightgrey;
+    border-bottom:4px solid lightgrey;
+    border-right:4px solid lightgrey;
+}
+.content5{
+    grid-column:5/6;
+    background-color: white;
+    padding:5px;
+    margin:8px;
+    margin-top:40px;
+    margin-bottom:40px;
+    border-radius : 10px;
+    border-top:1px solid lightgrey;
+    border-left:1px solid lightgrey;
+    border-bottom:4px solid lightgrey;
+    border-right:4px solid lightgrey;
+
+}
+.content6{
+    display : grid;
+    height:1200px;
+    grid-template-columns : 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    grid-column:1/4;
+    background-color: white;
+    padding:5px;
+    margin:8px;
+    border-radius : 10px;
+    border-top:1px solid lightgrey;
+    border-left:1px solid lightgrey;
+    border-bottom:5px solid lightgrey;
+    border-right:5px solid lightgrey;
+}
+.content7{
+    display : grid;
+    grid-template-rows: 5fr 11fr;
+    grid-column:4/6;
+    background-color: white;
+    padding:5px;
+    margin:8px;
+    border-radius : 10px;
+    border-top:1px solid lightgrey;
+    border-left:1px solid lightgrey;
+    border-bottom:5px solid lightgrey;
+    border-right:5px solid lightgrey;
+    height:1200px;
+}
+#lecture_info{
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+}
+/*box3*/
+
+/*lecture_info*/
+.info1{
+    padding:20px;
+}
+.info2{
+    grid-template-rows: 1fr 5fr;
+    display:grid;
+    text-align: right;
+    margin-right:20px;
+}
+.score{
+    font-size:20px;
+    line-height:10px;
+}
+.professor_img{
+    background-color: rgb(81,131,247);
+    padding:10px;
+    width:40px;
+    border-radius: 14px;
+}
+.professor_name{
+    color:rgb(81,131,247);
+    font-size:30px;
+    line-height:10px;
+}
+.class_name{
+    color:rgb(234,107,130);
+    font-size:30px;
+    line-height:10px;
+}
+.homework_name{
+    color: rgb(156,188,97);
+    font-size:30px;
+    line-height:10px;
+}
+.exam_name{
+    color:rgb(245,184,97);
+    font-size:30px;
+    line-height:10px;
+}
+.grade_name{
+    color:blueviolet;
+    font-size:30px;
+    line-height:10px;
+}
+.class_img{
+    background-color: rgb(234,107,130);
+    padding:10px;
+    width:40px;
+    border-radius: 14px;
+}
+.homework_img{
+    background-color: rgb(156,188,97);
+    padding:10px;
+    width:40px;
+    border-radius: 14px;
+}
+.exam_img{
+    background-color: rgb(245,184,97);
+    padding:10px;
+    width:40px;
+    border-radius: 14px;
+}
+.grade_img{
+    background-color: blueviolet;
+    padding:10px;
+    width:40px;
+    border-radius: 14px;
+}
+/*lecture_info*/
+
+/*box3*/
+.part1{
+    font-size : 20px;
+    margin-top:100px;
+}
+.part2{
+    font-size : 20px;
+    text-align:center;
+    margin-top:100px;
+}
+.part3{
+    padding:2%;
+    border-top : 1px solid lightgrey;
+    grid-column : 1/3;
+    font-size : 20px;
+    margin:auto;
+}
+.summary_box{
+    font-size:25px;
+}
+.wordcloudImage{
+    text-align:center;
+    margin-left:5%;
+    width:90%;
+
+}
+/*box3*/
+/*content7*/
+.section1{
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows : 30% 70%;
+    text-align:center;
+}
+.section2{
+    padding:5%;
+    font-size:18px;
+    overflow:scroll;
+}
+.simtitle{
+    grid-column:1/3;
+    font-size : 20px;
+}
+.simpart1{
+    text-align:right;
+    padding-right:10px;
+    font-size:25px;
+}
+.simpart2{
+    text-align:left;
+    padding-left:10px;
+    font-size:25px;
+}
+/*content7*/
